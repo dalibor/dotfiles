@@ -1,0 +1,34 @@
+#####
+# Ruby performance settings
+#####
+export RUBY_HEAP_MIN_SLOTS=1000000
+export RUBY_HEAP_SLOTS_INCREMENT=1000000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=1000000000
+export RUBY_HEAP_FREE_MIN=500000
+
+
+#####
+# Testing
+#####
+# export AUTOFEATURE=true
+export SHOW_ME_THE_PAGE=true
+export RSPEC=true
+
+
+#####
+# Editor
+#####
+export EDITOR=vim
+export GIT_EDITOR=vim
+export SVN_EDITOR=vim
+
+
+#####
+# Terminal & console
+#####
+export HISTFILESIZE=10000 # Remember the history
+export HISTSIZE=10000 # Store 10000 entries in history
+export HISTCONTROL=erasedups # Erase duplicates in history
+shopt -s histappend # Append to the history file on exit instead of overwriting
+export LESS="-R"

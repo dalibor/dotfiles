@@ -1,0 +1,137 @@
+#####
+# Terminal
+#####
+
+alias e='exit'
+alias h='history'
+alias bi='bundle install'
+alias be='bundle exec'
+alias r="cd ."
+alias ll="ls -al"
+alias lt="ls -lrt"
+alias l='ls -lah'
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    eval "`dircolors -b`"
+    alias ls='ls --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+
+#####
+# Gnome
+#####
+alias go='gnome-open'
+
+
+#####
+# Vim
+#####
+alias g='gvim --remote-silent'
+# alias vi="vim"
+
+
+#####
+# Ruby
+#####
+alias irb='irb --readline -r irb/completion -rubygems'
+
+
+#####
+# Rails
+#####
+alias rs="rails s"
+alias rc="rails c"
+alias rss="ruby script/server"
+alias rsc="ruby script/console"
+alias anno='annotate --exclude tests,fixtures -p after -s'
+
+
+#####
+# Rake
+#####
+alias rr='rake routes'
+alias rdm='rake db:migrate'
+alias rdp='rake db:populate'
+alias rdmt='rake db:migrate RAILS_ENV=test'
+alias rdr='rake db:rollback'
+alias rdrm='rake db:rollback && rake db:migrate'
+alias rdrt='rake db:rollback RAILS_ENV=test'
+alias rdtp='rake db:test:prepare'
+alias rdd='rake db:drop'
+alias rddt='rake db:drop RAILS_ENV=test'
+alias rdc='rake db:create'
+alias rdct='rake db:create RAILS_ENV=test'
+alias rds='rake db:seed'
+alias rdcyc='rake db:drop && rake db:create && rake db:migrate'
+alias rdcyct='rake db:drop RAILS_ENV=test && rake db:create RAILS_ENV=test && rake db:migrate RAILS_ENV=test'
+
+
+#####
+# Ack-Grep
+#####
+alias ag='ack-grep'
+
+
+#####
+# Cucumber
+#####
+alias cf='cucumber features'
+alias cfr='cucumber features --tag @run'
+alias cfrs='cucumber features --tag @run --drb'
+alias cfg='cucumber features --tag @green'
+alias cfs='cucumber features -p selenium'
+alias cfsr='cucumber features -p selenium --tag @run'
+alias cff='cucumber features && cucumber features -p selenium'
+alias cuc='cucumber -r features'
+
+# Run single cucumber feature
+function c () {
+  if [ $# -eq 0 ]; then
+    local cmd="bundle exec cucumber"
+  else
+    local cmd="bundle exec cucumber $@ --require features"
+  fi
+  echo $cmd
+  eval $cmd
+}
+
+
+#####
+# Prompt customization
+#####
+function minutes_since_last_commit {
+    now=`date +%s`
+    last_commit=`git log --pretty=format:'%at' -1`
+    seconds_since_last_commit=$((now-last_commit))
+    minutes_since_last_commit=$((seconds_since_last_commit/60))
+    echo $minutes_since_last_commit
+}
+git_prompt() {
+    local g="$(__gitdir)"
+    if [ -n "$g" ]; then
+        local MINUTES_SINCE_LAST_COMMIT=`minutes_since_last_commit`
+        if [ "$MINUTES_SINCE_LAST_COMMIT" -gt 30 ]; then
+            local COLOR=${RED}
+        elif [ "$MINUTES_SINCE_LAST_COMMIT" -gt 10 ]; then
+            local COLOR=${YELLOW}
+        else
+            local COLOR=${GREEN}
+        fi
+        local SINCE_LAST_COMMIT="${COLOR}$(minutes_since_last_commit)m${NORMAL}"
+        # The __git_ps1 function inserts the current git branch where %s is
+        local GIT_PROMPT=`__git_ps1 "(%s|${SINCE_LAST_COMMIT})"`
+        echo ${GIT_PROMPT}
+    fi
+}
+# PS1="\h:\W\$(git_prompt) \u\$ "
+# PS1="\[\033[00m\]\u@\h\[\033[01;34m\] \w \[\033[31m\]\$(parse_git_branch) \$(parse_svn_branch) \[\033[00m\]$\[\033[00m\] "
+PS1="\[\033[00m\]\u@\h\[\033[01;34m\] \w \[\033[31m\]\$(git_prompt) \[\033[00m\]$\[\033[00m\] "
