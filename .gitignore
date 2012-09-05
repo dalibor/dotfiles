@@ -1,0 +1,8 @@
+*~
+*.swp
+*.swo
+.project
+.idea
+.DS_Store
+.sass-cache/
+/tags
