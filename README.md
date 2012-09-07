@@ -8,7 +8,6 @@ Personalized mix of ruby, rails and git. For vim see [vimfiles](https://github.c
 
 ```bash
 git clone https://github.com/dalibor/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
 
 echo "source ~/.dotfiles/bashrc" >> ~/.bash_profile
 echo 'source ~/.dotfiles/tmux' >> ~/.tmux.conf
