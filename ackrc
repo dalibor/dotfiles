@@ -1,0 +1,17 @@
+--ignore-dir=tmp
+--ignore-dir=.git
+
+# lexically sort filenames
+--sort-files
+
+# --type-add=ruby=rake,haml
+--type-add=ruby=.haml,.gems,.rdoc,.sass,.feature,.spec,.rake,.md
+--type-add=vim=vimrc
+--type-add=js=json
+--type-set=css=sass
+
+# add types ack doesn't know about
+--type-set=MARKDOWN=md,mkd,markdown
+--type-set=RDOC=rdoc
+--type-set=bin=.pdf
+#--type-set=bin=.pdf,.png,.svg,.swf,.eot,.ttf,.woff,.ico,.gif,.jpg

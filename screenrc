@@ -1,0 +1,46 @@
+hardstatus on
+hardstatus alwayslastline
+
+# Do not display the copyright page
+startup_message off
+
+# Change the number of scrollback lines
+defscrollback 1000 # default: 100
+
+# Ensure the default shell is the same as the $SHELL environment variable
+shell -$SHELL
+
+# Make navigating between regions easier
+bind s split
+bind j focus down
+bind k focus up
+
+# Make resizing regions easier
+bind = resize =
+bind + resize +1
+bind - resize -1
+
+# Configure status bar at the bottom of the terminal
+hardstatus alwayslastline
+# hardstatus string "%{= kb}[ %=%{w}%?%-Lw%?%{C}(%{W}%n*%f %t%?(%u)%?%{C})%{w}%?%+Lw%?%?%= %{b}][%{C} %Y.%m.%d %{W}%0c %{b}]"
+
+termcapinfo xterm ti@:te@
+hardstatus string "%{= kG}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a "
+
+# Turn off the fucking visual bell
+vbell off
+
+screen -t dev 0
+# screen -t console
+
+# multiuser
+multiuser on
+
+#acladd guest # give full read/write access to guest
+# ":aclchg USERNAME -w "#"
+# '#' refers to all windows, '?' to all commands
+aclchg guest -wx "#,?"
+aclchg guest +x "colon,wall,detach"
+
+# aclchg guest -x "#,?"
+# aclchg guest +x "colon,wall,detach"
