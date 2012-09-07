@@ -18,3 +18,9 @@ ln -s ~/.dotfiles/gitignore ~/.gitignore
 ln -s ~/.dotfiles/gemrc ~/.gemrc
 ln -s ~/.dotfiles/irbrc ~/.irbrc
 ```
+
+or use install.sh script. Read the script first!
+
+```sh
+curl https://raw.github.com/dalibor/dotfiles/master/install.sh | bash
+```
