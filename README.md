@@ -1,16 +1,18 @@
 # ~dalibor
 
-## dotfiles
+Dalibor Nasevic's dotfiles
+http://dalibornasevic.com/
+
+## Dotfiles
 
 Personalized mix of ruby, rails and git. For vim see [vimfiles](https://github.com/dalibor/vimfiles/).
 
-## install
+## Installation
 
 ```bash
 git clone https://github.com/dalibor/dotfiles.git ~/.dotfiles
 
-echo "source ~/.dotfiles/bashrc" >> ~/.bash_profile
-echo 'source ~/.dotfiles/tmux' >> ~/.tmux.conf
+echo "source ~/.dotfiles/bashrc" >> ~/.bashrc
 
 ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/gitignore ~/.gitignore
@@ -18,10 +20,15 @@ ln -s ~/.dotfiles/gemrc ~/.gemrc
 ln -s ~/.dotfiles/irbrc ~/.irbrc
 ln -s ~/.dotfiles/ackrc ~/.ackrc
 ln -s ~/.dotfiles/screenrc ~/.screenrc
+ln -s ~/.dotfiles/tmux ~/.tmux.conf
 ```
 
-or use install.sh script. Read the script first!
+## Configuration
+
+### Create ~/.gitconfig.local file with your name and email to use with Git
 
 ```bash
-curl https://raw.github.com/dalibor/dotfiles/master/install.sh | bash
+[user]
+  name = Dalibor Nasevic
+  email = dalibor.nasevic@gmail.com
 ```

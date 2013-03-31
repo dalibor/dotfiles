@@ -1,6 +1,6 @@
-[user]
-    name = Dalibor Nasevic
-    email = dalibor.nasevic@gmail.com
+[include]
+  # For local git config
+  path = ~/.gitconfig.local
 [color]
     diff = auto
     status = auto
@@ -37,7 +37,6 @@
     b = branch
     undo = reset --soft HEAD^
     chomp = reset --hard HEAD~
-
 [format]
     ;pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
     pretty=%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
