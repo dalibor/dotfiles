@@ -35,32 +35,32 @@ rescue LoadError => err
   warn "Couldn't load interactive_editor: #{err}"
 end
 
-if defined? Rails
-  begin
-    require 'hirb'
-    Hirb.enable
-  rescue LoadError => err
-    warn "Couldn't load Sketches: #{err}"
-  end
-end
+# if defined? Rails
+#   begin
+#     require 'hirb'
+#     Hirb.enable
+#   rescue LoadError => err
+#     warn "Couldn't load Sketches: #{err}"
+#   end
+# end
 
-begin
-  require "ap"
-  IRB::Irb.class_eval do
-    def output_value
-      ap @context.last_value
-    end
-  end
-rescue LoadError => err
-  warn "Couldn't load awesome print: #{err}"
-end
+# begin
+#   require "ap"
+#   IRB::Irb.class_eval do
+#     def output_value
+#       ap @context.last_value
+#     end
+#   end
+# rescue LoadError => err
+#   warn "Couldn't load awesome print: #{err}"
+# end
 
-begin
-  require 'wirb'
-  Wirb.start
-rescue LoadError => err
-  warn "Couldn't load Wirb: #{err}"
-end
+# begin
+#   require 'wirb'
+#   Wirb.start
+# rescue LoadError => err
+#   warn "Couldn't load Wirb: #{err}"
+# end
 
 # begin
 #   require 'wirble'

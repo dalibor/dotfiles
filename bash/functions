@@ -1,0 +1,93 @@
+# Run single cucumber feature
+function c () {
+  if [ $# -eq 0 ]; then
+    local cmd="bundle exec cucumber"
+  else
+    local cmd="bundle exec cucumber $@ --require features"
+  fi
+  echo $cmd
+  eval $cmd
+}
+
+# List files
+function lt() { ls -ltrsa "$@" | tail; }
+
+# Grep for processes
+function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
+
+# Search by name
+function fname() { find . -iname "*$@*"; }
+
+# Extract most know archives with one command
+extract () {
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1     ;;
+      *.tar.gz)    tar xzf $1     ;;
+      *.bz2)       bunzip2 $1     ;;
+      *.rar)       unrar e $1     ;;
+      *.gz)        gunzip $1      ;;
+      *.tar)       tar xf $1      ;;
+      *.tbz2)      tar xjf $1     ;;
+      *.tgz)       tar xzf $1     ;;
+      *.zip)       unzip $1       ;;
+      *.Z)         uncompress $1  ;;
+      *.7z)        7z x $1        ;;
+      *)     echo "'$1' cannot be extracted via extract()" ;;
+       esac
+   else
+       echo "'$1' is not a valid file"
+   fi
+}
+
+# Make and cd into directory
+function mcd() {
+  mkdir -p "$1" && cd "$1";
+}
+
+# Find text in any file
+function ft() {
+  find . -name "${2:-*}" | xargs grep -l "$1"
+}
+
+# Go back x directories
+function b() {
+  str=""
+  count=0
+  while [ "$count" -lt "$1" ];
+  do
+    str=$str"../"
+    let count=count+1
+  done
+  cd $str
+}
+
+# Tail with search highlight
+t() {
+  tail -f $1 | perl -pe "s/$2/\e[1;31;43m$&\e[0m/g"
+}
+
+# Ban an IP
+function ban() {
+  if [ "`id -u`" == "0" ] ; then
+    iptables -A INPUT -s $1 -j DROP
+  else
+    sudo iptables -A INPUT -s $1 -j DROP
+  fi
+}
+
+# Paginated colored tree
+ltree() {
+  tree -C $* | less -R
+}
+
+# Convert a video to a gif
+gif-ify() {
+  if [[ -n "$1" && -n "$2" ]]; then
+    ffmpeg -i $1 -pix_fmt rgb24 temp.gif
+    convert -layers Optimize temp.gif $2
+    rm temp.gif
+  else
+    echo "proper usage: gif-ify <input_movie.mov> <output_file.gif>. You DO need to include extensions."
+  fi
+}

@@ -15,3 +15,6 @@ complete -C source $DOT_FILES_HOME/rake/completion -o default rake
 # tmux term
 export TERM=xterm-256color
 
+if [ -d "$HOME/bin" ] ; then
+  PATH="$PATH:$HOME/bin"
+fi
