@@ -13,6 +13,7 @@ Personalized mix of ruby, rails and git. For vim see [vimfiles](https://github.c
 git clone https://github.com/dalibor/dotfiles.git ~/.dotfiles
 
 echo "source ~/.dotfiles/bashrc" >> ~/.bashrc
+echo "source ~/.bashrc" >> ~/.bash_profile
 
 ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/gitignore ~/.gitignore
