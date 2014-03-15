@@ -14,6 +14,10 @@ def y(obj)
   puts obj.to_yaml
 end
 
+def e
+  exit
+end
+
 class Object
   def gvim(method_name)
     file, line = method(method_name).source_location
@@ -21,13 +25,13 @@ class Object
   end
 end
 
-# Bundler jailbreak
-# https://github.com/ConradIrwin/pry-debundle/blob/master/lib/pry-debundle.rb
-if defined? Bundler
-  Gem.post_reset_hooks.reject! {|hook| hook.source_location.first =~ %r{/bundler/} }
-  Gem::Specification.reset
-  load 'rubygems/custom_require.rb'
-end
+# # Bundler jailbreak
+# # https://github.com/ConradIrwin/pry-debundle/blob/master/lib/pry-debundle.rb
+# if defined? Bundler
+#   Gem.post_reset_hooks.reject! {|hook| hook.source_location.first =~ %r{/bundler/} }
+#   Gem::Specification.reset
+#   load 'rubygems/custom_require.rb'
+# end
 
 begin
   require 'interactive_editor'

@@ -1,8 +1,11 @@
 # remove prefix binding
 # unbind C-b
 
-# set prefix key to Ctrl-t
+# set prefix key
 # set -g prefix C-a
+
+# send prefix to other programs by pressing Ctrl-b twice
+bind C-b send-prefix
 
 # copy and paste
 setw -g mode-keys vi
@@ -24,9 +27,6 @@ setw -g pane-base-index 1
 
 # reload tmux configuration
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
-
-# send prefix to other programs by pressing Ctrl-b twice
-bind C-b send-prefix
 
 # window splits
 bind | split-window -h

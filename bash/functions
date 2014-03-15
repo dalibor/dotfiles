@@ -91,3 +91,13 @@ gif-ify() {
     echo "proper usage: gif-ify <input_movie.mov> <output_file.gif>. You DO need to include extensions."
   fi
 }
+
+# Remove backup files from local directory and its subdirectories
+tmprm() {
+  find ./ -name "*~" | tr "\n" "\000" | xargs -0 rm
+}
+
+function binstubs () {
+  export PATH="$PWD/bin:$PATH"
+  hash -r 2>/dev/null || true
+}

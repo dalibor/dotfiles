@@ -9,6 +9,8 @@
 --type-add=vim=vimrc
 --type-add=js=json
 --type-set=css=sass
+--type-set=css=scss
+--type-set=html=erb
 
 # add types ack doesn't know about
 --type-set=MARKDOWN=md,mkd,markdown

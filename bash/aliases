@@ -14,6 +14,7 @@ alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 alias p='ping www.google.com'
 alias servethis='python -m SimpleHTTPServer 8080'
+alias rubyserver="ruby -run -e httpd . -p 9090"
 alias myip='curl ifconfig.me'
 alias al="alias | grep"
 alias hgrep='history | grep'
@@ -45,7 +46,7 @@ alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\
 alias freq='cut -f1 -d" " ~/.bash_history | sort | uniq -c | sort -nr | head -n 30'
 
 # Search for processes
-alias tm='ps -ef | grep'
+alias psg='ps -ef | grep'
 
 # Show active network listeners
 alias netlisteners='lsof -i -P | grep LISTEN'
@@ -89,6 +90,7 @@ alias rc="rails c"
 alias rss="ruby script/server"
 alias rsc="ruby script/console"
 alias anno='annotate --exclude tests,fixtures -p after -s'
+alias testfiles='ruby -I.:test -e "ARGV.each{|f| require f}"'
 
 
 #####
@@ -116,6 +118,10 @@ alias rdcyct='rake db:drop RAILS_ENV=test && rake db:create RAILS_ENV=test && ra
 #####
 alias ag='ack-grep'
 
+#####
+# Spring
+#####
+alias srspec='spring rspec'
 
 #####
 # Cucumber
