@@ -1,9 +1,4 @@
-# ~dalibor
-
-Dalibor Nasevic's dotfiles
-http://dalibornasevic.com/
-
-## Dotfiles
+# dotfiles
 
 Personalized mix of ruby, rails and git. For vim see [vimfiles](https://github.com/dalibor/vimfiles/).
 
@@ -28,7 +23,7 @@ test -L ~/bin/dotfiles_bins && echo "~/bin/dotfiles_bins exists" || ln -s ~/.dot
 
 ## Configuration
 
-### Create ~/.gitconfig.local file with your name and email to use with Git
+Create `~/.gitconfig.local` file with your name and email to use with Git
 
 ```bash
 [user]
@@ -36,10 +31,10 @@ test -L ~/bin/dotfiles_bins && echo "~/bin/dotfiles_bins exists" || ln -s ~/.dot
   email = dalibor.nasevic@gmail.com
 ```
 
-* Note
+** Note: make sure you have the newest version of Git installed. Git version 1.7.9.5 does not support include tag that's used to include `gitconfig.local` file.
 
-Make sure you have the newest version of Git installed. Git version 1.7.9.5 does not support include tag that's used to include `gitconfig.local` file.
-
-  sudo add-apt-repository ppa:git-core/ppa
-  sudo apt-get update
-  sudo apt-get install git
+```bash
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt-get update
+sudo apt-get install git
+```
