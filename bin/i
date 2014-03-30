@@ -1,0 +1,27 @@
+#!/bin/bash
+
+echo "SERVER"
+echo "================================="
+echo "Node name : `uname -n`"
+echo "Machine name : `uname -m`"
+echo "Operating System : `uname -o`"
+echo "Kernel name : `uname -s`"
+echo "Kernel version : `uname -v`"
+echo "Kernel release : `uname -r`"
+echo "Processor Type : `uname -p`"
+echo "Hardware Platform: `uname -i`"
+echo
+
+echo "MEMORY"
+echo "================================="
+cat /proc/meminfo | grep MemTotal
+echo
+
+echo "PROCESSORS"
+echo "================================="
+cat /proc/cpuinfo | grep "model name" | nl
+echo
+
+echo "DISKSPACE"
+echo "================================="
+df -h

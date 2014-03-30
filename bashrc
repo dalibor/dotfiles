@@ -18,7 +18,7 @@ export TERM=xterm-256color
 if [ -d "$HOME/bin" ] ; then
   PATH="$PATH:$HOME/bin"
 
-  for directory in `find "$HOME/bin" -type d`
+  for directory in `find -L "$HOME/bin" -type d`
   do
       PATH="$PATH:$directory"
   done
