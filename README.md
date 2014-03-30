@@ -33,3 +33,11 @@ ln -s ~/.dotfiles/tmux ~/.tmux.conf
   name = Dalibor Nasevic
   email = dalibor.nasevic@gmail.com
 ```
+
+* Note
+
+Make sure you have the newest version of Git installed. Git version 1.7.9.5 does not support include tag that's used to include `gitconfig.local` file.
+
+  sudo add-apt-repository ppa:git-core/ppa
+  sudo apt-get update
+  sudo apt-get install git
