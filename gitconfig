@@ -16,6 +16,7 @@
     st = status
     ci = commit
     co = checkout
+    cp = cherry-pick
     di = diff
     dc = diff --cached
     amend = commit --amend
