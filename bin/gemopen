@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+def open_gem(path)
+  editor = ENV['GEM_OPEN_EDITOR'] || ENV['VISUAL'] || ENV['EDITOR']
+  Dir.chdir(path) { system(editor, path) }
+end
+
+def get_path(name, version)
+  spec = Gem::Specification.detect do |s|
+    s.name == name && (!version || version && version == s.version.version)
+  end
+
+  spec.full_gem_path if spec
+end
+
+
+name    = ARGV[0]
+version = ARGV[1]
+
+if path = get_path(name, version)
+  open_gem(path)
+else
+  puts "Cannot find #{name}-#{version}. Listing gems..."
+  system("gem list #{name}")
+end
