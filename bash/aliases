@@ -142,3 +142,9 @@ alias cfs='cucumber features -p selenium'
 alias cfsr='cucumber features -p selenium --tag @run'
 alias cff='cucumber features && cucumber features -p selenium'
 alias cuc='cucumber -r features'
+
+
+alias cb='chromium-browser --force-device-scale-factor &'
+alias game='cd /home/dalibor/applications/brainworkshop && python brainworkshop.pyw'
+alias todo='vim -O ~/Dropbox/notes/planner/todo.txt ~/Dropbox/notes/planner/routine.txt ~/Dropbox/notes/planner/goals.txt'
+alias pgist='gist -p -o -c -P -f paste'
