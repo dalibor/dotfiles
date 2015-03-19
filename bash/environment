@@ -33,3 +33,4 @@ export HISTSIZE=10000 # Store 10000 entries in history
 export HISTCONTROL=erasedups # Erase duplicates in history
 shopt -s histappend # Append to the history file on exit instead of overwriting
 export LESS="-R"
+export TERM=xterm-256color # tmux term
