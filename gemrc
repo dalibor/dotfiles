@@ -1,8 +1,7 @@
 ---
 :verbose: true
 :sources:
-#- http://rubygems.org
-- http://production.s3.rubygems.org
+- http://rubygems.org
 :benchmark: false
 :backtrace: false
 :update_sources: true
