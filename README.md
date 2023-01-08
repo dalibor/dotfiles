@@ -5,7 +5,10 @@ Personalized mix of ruby, rails and git. For vim see [vimfiles](https://github.c
 ## Installation
 
 ```bash
-git clone https://github.com/dalibor/dotfiles.git ~/.dotfiles
+git clone git@github.com:dalibor/dotfiles.git ~/.dotfiles
+
+# For loading custom version managers like RVM, NVM, GVM, etc.
+touch ~/.bash_profile
 
 echo "source ~/.dotfiles/bashrc" >> ~/.bashrc
 echo "source ~/.bash_profile" >> ~/.bashrc
@@ -31,9 +34,10 @@ Create `~/.gitconfig.local` file with your name and email to use with Git
   email = dalibor.nasevic@gmail.com
 ```
 
-** Note: make sure you have the newest version of Git installed. Git version 1.7.9.5 does not support include tag that's used to include `gitconfig.local` file.
+** Note: make sure you have a newer version of Git installed. Git version 1.7.9.5 or older do not support include tag that's used to include `gitconfig.local` file.
 
 ```bash
+# Install latest Git version on Ubuntu
 sudo add-apt-repository ppa:git-core/ppa
 sudo apt-get update
 sudo apt-get install git
