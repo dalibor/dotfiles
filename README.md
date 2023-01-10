@@ -34,7 +34,7 @@ Create `~/.gitconfig.local` file with your name and email to use with Git
   email = dalibor.nasevic@gmail.com
 ```
 
-** Note: make sure you have a newer version of Git installed. Git version 1.7.9.5 or older do not support include tag that's used to include `gitconfig.local` file.
+**Note**: make sure you have a newer version of Git installed. Git version 1.7.9.5 or older do not support include tag that's used to include `gitconfig.local` file.
 
 ```bash
 # Install latest Git version on Ubuntu
