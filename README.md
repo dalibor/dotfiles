@@ -7,11 +7,7 @@ Personalized mix of ruby, rails and git. For vim see [vimfiles](https://github.c
 ```bash
 git clone git@github.com:dalibor/dotfiles.git ~/.dotfiles
 
-# For loading custom version managers like RVM, NVM, GVM, etc.
-touch ~/.bash_profile
-
 echo "source ~/.dotfiles/bashrc" >> ~/.bashrc
-echo "source ~/.bash_profile" >> ~/.bashrc
 
 ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/gitignore ~/.gitignore
