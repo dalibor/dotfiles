@@ -123,11 +123,6 @@ alias tmodified="git st | grep test.rb | sed -e 's/^\s*modified:\s*//g' | xargs 
 
 
 #####
-# Ack-Grep
-#####
-alias ag='ack-grep'
-
-#####
 # Spring
 #####
 alias srspec='spring rspec'
