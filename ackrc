@@ -1,7 +1,18 @@
 --ignore-dir=tmp
 --ignore-dir=.git
+--ignore-dir=log
+--ignore-dir=coverage
+--ignore-dir=test/reports
+--ignore-dir=docker/volumes
+--ignore-dir=client/lcov-report
+--ignore-dir=.venv
+--ignore-dir=cdk.out
 --type-set=IGNORE=.svg
 --noIGNORE
+
+--ignore-file=match:^tags$
+--ignore-file=is:app-bundle.js
+--ignore-file=is:.rubocop_todo.yml
 
 # lexically sort filenames
 --sort-files
