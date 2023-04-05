@@ -6,3 +6,6 @@
 .DS_Store
 .sass-cache/
 tags
+
+# Local aliases
+bash/aliases.local
