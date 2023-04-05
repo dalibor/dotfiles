@@ -7,6 +7,8 @@ IRB.conf[:PROMPT_MODE]  = :SIMPLE
 IRB.conf[:SAVE_HISTORY] = 100
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
 IRB.conf[:AUTO_INDENT]  = true
+IRB.conf[:BACK_TRACE_LIMIT] = 100
+IRB.conf[:USE_AUTOCOMPLETE] = false
 
 # ActiveRecord::Base.logger.level = 1 if defined? ActiveRecord::Base
 
