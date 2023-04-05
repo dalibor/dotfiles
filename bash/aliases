@@ -10,11 +10,10 @@ alias r="cd ."
 alias ll="ls -al"
 alias lt="ls -lrt"
 alias l='ls -lah'
-alias pbcopy='xsel --clipboard --input'
-alias pbpaste='xsel --clipboard --output'
 alias p='ping www.google.com'
-alias servethis='python -m SimpleHTTPServer 8080'
+alias pythonserver='python -m SimpleHTTPServer 8080'
 alias rubyserver="ruby -run -e httpd . -p 9090"
+alias myip='curl ifconfig.me'
 alias al="alias | grep"
 alias hgrep='history | grep'
 alias reload='source $HOME/.bashrc 1>/dev/null'
@@ -22,11 +21,17 @@ alias install='sudo apt-get install'
 alias remove='sudo apt-get remove'
 alias dfree="df -h -x tmpfs"
 alias json="python -mjson.tool"
-alias extip="dig -4 @ns1-1.akamaitech.net -t a whoami.akamai.net +short"
-alias intip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
 
 # Clear terminal and empty scrollback
 alias clear='printf "\ec"'
+
+# Define pbcopy using xsel if they're not already defined
+if ! type -P "pbcopy" > /dev/null; then
+  alias pbcopy='xsel --clipboard --input'
+fi
+if ! type -P "pbpaste" > /dev/null; then
+  alias pbpaste='xsel --clipboard --output'
+fi
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -64,18 +69,8 @@ alias speedtest='wget --output-document=/dev/null http://speedtest.wdc01.softlay
 # Find the biggest folder
 alias ds='du -ks *|sort -n'
 
-#####
-# Gnome
-#####
-alias go='gnome-open'
-
-
-#####
-# Vim
-#####
-alias v='gvim --remote-silent'
-# alias vi="vim"
-
+# Clean merged branches
+alias clean_merged_branches='git branch --merged | egrep -v "(^\*|master|main)" | xargs git branch -d'
 
 #####
 # Ruby
@@ -118,9 +113,10 @@ alias rdcyct='rake db:drop RAILS_ENV=test && rake db:create RAILS_ENV=test && ra
 #####
 # Rake
 #####
-alias t="spring testunit"
-alias tmodified="git st | grep test.rb | sed -e 's/^\s*modified:\s*//g' | xargs spring testunit"
-
+alias t="bundle exec spring testunit"
+#alias tmodified="git st | grep test.rb | sed -e 's/^\s*modified:\s*//g' | xargs spring testunit"
+alias tmodified="git diff --name-only | grep test.rb | xargs spring testunit"
+alias lmodified="git st | grep .rb | sed -e 's/^\s*modified:\s*//g' | xargs rubocop -l"
 
 #####
 # Spring
