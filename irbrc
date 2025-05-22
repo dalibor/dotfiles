@@ -1,6 +1,8 @@
 require 'irb/completion'
 require 'irb/ext/save-history'
 
+# https://railsatscale.com/2023-12-19-irb-for-ruby-3-3/
+
 IRB.conf[:PROMPT_MODE]  = :SIMPLE
 IRB.conf[:SAVE_HISTORY] = 100
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"

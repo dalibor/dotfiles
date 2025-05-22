@@ -5,6 +5,7 @@
 --ignore-dir=test/reports
 --ignore-dir=docker/volumes
 --ignore-dir=client/lcov-report
+--ignore-dir=node_modules
 --ignore-dir=.venv
 --ignore-dir=cdk.out
 --type-set=IGNORE=.svg

@@ -23,7 +23,8 @@ alias dfree="df -h -x tmpfs"
 alias json="python -mjson.tool"
 
 # Clear terminal and empty scrollback
-alias clear='printf "\ec"'
+# alias clear='printf "\ec"'
+alias clear='printf "\033[2J\033[3J\033[1;1H"'
 
 # Define pbcopy using xsel if they're not already defined
 if ! type -P "pbcopy" > /dev/null; then
@@ -71,12 +72,6 @@ alias ds='du -ks *|sort -n'
 
 # Clean merged branches
 alias clean_merged_branches='git branch --merged | egrep -v "(^\*|master|main)" | xargs git branch -d'
-
-#####
-# Ruby
-#####
-alias irb='irb --readline -r irb/completion -rubygems'
-
 
 #####
 # Rails
