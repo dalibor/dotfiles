@@ -21,6 +21,7 @@ alias install='sudo apt-get install'
 alias remove='sudo apt-get remove'
 alias dfree="df -h -x tmpfs"
 alias json="python -mjson.tool"
+alias nohistory="HISTFILE=/dev/null HISTSIZE=0 HISTFILESIZE=0 HISTCONTROL=ignoreboth"
 
 # Clear terminal and empty scrollback
 # alias clear='printf "\ec"'
@@ -135,3 +136,4 @@ alias cb='chromium-browser --force-device-scale-factor &'
 alias game='cd /home/dalibor/applications/brainworkshop && python brainworkshop.pyw'
 alias todo='vim ~/Dropbox/notes/todo.txt'
 alias pgist='gist -p -o -c -P -f paste'
+alias awslocal="AWS_ACCESS_KEY_ID=test AWS_SECRET_ACCESS_KEY=test AWS_DEFAULT_REGION=${DEFAULT_REGION:-us-west-2} aws --endpoint-url=http://${LOCALSTACK_HOST:-localhost}:4566"
