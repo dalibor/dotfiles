@@ -11,11 +11,11 @@ echo "source ~/.dotfiles/bashrc" >> ~/.bashrc
 
 ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/gitignore ~/.gitignore
-ln -s ~/.dotfiles/gemrc ~/.gemrc
 ln -s ~/.dotfiles/irbrc ~/.irbrc
 ln -s ~/.dotfiles/ackrc ~/.ackrc
 ln -s ~/.dotfiles/screenrc ~/.screenrc
 ln -s ~/.dotfiles/tmux ~/.tmux.conf
+cp ~/.dotfiles/gemrc ~/.gemrc
 mkdir -p ~/bin
 test -L ~/bin/dotfiles_bins && echo "~/bin/dotfiles_bins exists" || ln -s ~/.dotfiles/bin ~/bin/dotfiles_bins
 ```
