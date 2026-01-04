@@ -8,6 +8,7 @@
 --ignore-dir=node_modules
 --ignore-dir=.venv
 --ignore-dir=cdk.out
+--ignore-dir=.data
 --type-set=IGNORE=.svg
 --noIGNORE
 
