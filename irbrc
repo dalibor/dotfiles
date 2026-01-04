@@ -1,6 +1,3 @@
-require 'irb/completion'
-require 'irb/ext/save-history'
-
 # https://railsatscale.com/2023-12-19-irb-for-ruby-3-3/
 
 IRB.conf[:PROMPT_MODE]  = :SIMPLE
@@ -22,10 +19,4 @@ class Object
     file, line = method(method_name).source_location
     `gvim +#{line} #{file}`
   end
-end
-
-begin
-  require 'interactive_editor'
-rescue LoadError => err
-  warn "Couldn't load interactive_editor: #{err}"
 end
