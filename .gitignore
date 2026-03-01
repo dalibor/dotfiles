@@ -9,3 +9,6 @@ tags
 
 # Local aliases
 bash/aliases.local
+
+# Local environment
+bash/environment.local
