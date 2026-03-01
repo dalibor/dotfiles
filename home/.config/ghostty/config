@@ -36,13 +36,6 @@ mouse-scroll-multiplier = 0.95
 # Tabs
 keybind = ctrl+t=new_tab
 keybind = ctrl+w=close_tab
-#keybind = ctrl+j=previous_tab
-#keybind = ctrl+k=next_tab
-
-#keybind = alt+t=new_tab
-#keybind = alt+w=close_tab
-#keybind = alt+j=previous_tab
-#keybind = alt+k=next_tab
 
 # Fix general slowness on hyprland (https://github.com/ghostty-org/ghostty/discussions/3224)
 async-backend = epoll
