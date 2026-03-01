@@ -1,13 +1,5 @@
 export DOT_FILES_HOME=$HOME/.dotfiles
 
-# uncomment for secret env variables
-# source ~/Private/dotfiles/env
-
-# bash completion
-if [ -e /etc/bash_completion ]; then
-  source /etc/bash_completion
-fi
-
 # source everything in bash
 for f in $DOT_FILES_HOME/bash/*; do source $f; done
 
