@@ -7,7 +7,7 @@ Personalized dotfiles. For vim see [vimfiles](https://github.com/dalibor/vimfile
 ```bash
 git clone git@github.com:dalibor/dotfiles.git ~/.dotfiles
 grep -Fxq "source ~/.dotfiles/bashrc" ~/.bashrc || echo "source ~/.dotfiles/bashrc" >> ~/.bashrc
-stow omarchy -t ~/
+stow home -t ~/
 ```
 
 ## Configuration
