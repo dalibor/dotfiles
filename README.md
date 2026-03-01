@@ -20,6 +20,12 @@ mkdir -p ~/bin
 test -L ~/bin/dotfiles_bins && echo "~/bin/dotfiles_bins exists" || ln -s ~/.dotfiles/bin ~/bin/dotfiles_bins
 ```
 
+Setup Omarchy configs with stow:
+
+```bash
+stow omarchy -t ~/
+```
+
 ## Configuration
 
 Create `~/.gitconfig.local` file with your name and email to use with Git
