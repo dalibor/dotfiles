@@ -15,3 +15,4 @@ if [ -d "$HOME/bin" ] ; then
   done
 fi
 
+export GEMRC="$DOT_FILES_HOME/gemrc"
