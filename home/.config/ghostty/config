@@ -35,6 +35,7 @@ mouse-scroll-multiplier = 0.95
 
 # Tabs
 keybind = ctrl+t=new_tab
+# keybind = super+shift+t=new_tab
 # keybind = ctrl+w=close_tab
 keybind = super+shift+w=close_tab
 
