@@ -137,3 +137,4 @@ alias game='cd /home/dalibor/applications/brainworkshop && python brainworkshop.
 alias todo='vim ~/Dropbox/notes/todo.txt'
 alias pgist='gist -p -o -c -P -f paste'
 alias awslocal="AWS_ACCESS_KEY_ID=test AWS_SECRET_ACCESS_KEY=test AWS_DEFAULT_REGION=${DEFAULT_REGION:-us-west-2} aws --endpoint-url=http://${LOCALSTACK_HOST:-localhost}:4566"
+alias vi='vim'
