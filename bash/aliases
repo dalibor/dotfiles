@@ -27,14 +27,6 @@ alias nohistory="HISTFILE=/dev/null HISTSIZE=0 HISTFILESIZE=0 HISTCONTROL=ignore
 # alias clear='printf "\ec"'
 alias clear='printf "\033[2J\033[3J\033[1;1H"'
 
-# Define pbcopy using xsel if they're not already defined
-if ! type -P "pbcopy" > /dev/null; then
-  alias pbcopy='xsel --clipboard --input'
-fi
-if ! type -P "pbpaste" > /dev/null; then
-  alias pbpaste='xsel --clipboard --output'
-fi
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
   eval "`dircolors -b`"
@@ -107,34 +99,13 @@ alias rdcyct='rake db:drop RAILS_ENV=test && rake db:create RAILS_ENV=test && ra
 
 
 #####
-# Rake
+# Tests
 #####
+alias srspec='spring rspec'
 alias t="bundle exec spring testunit"
 #alias tmodified="git st | grep test.rb | sed -e 's/^\s*modified:\s*//g' | xargs spring testunit"
 alias tmodified="git diff --name-only | grep test.rb | xargs spring testunit"
 alias lmodified="git st | grep .rb | sed -e 's/^\s*modified:\s*//g' | xargs rubocop -l"
 
-#####
-# Spring
-#####
-alias srspec='spring rspec'
-
-#####
-# Cucumber
-#####
-alias cf='cucumber features'
-alias cfr='cucumber features --tag @run'
-alias cfrs='cucumber features --tag @run --drb'
-alias cfg='cucumber features --tag @green'
-alias cfs='cucumber features -p selenium'
-alias cfsr='cucumber features -p selenium --tag @run'
-alias cff='cucumber features && cucumber features -p selenium'
-alias cuc='cucumber -r features'
-
-
-alias cb='chromium-browser --force-device-scale-factor &'
-alias game='cd /home/dalibor/applications/brainworkshop && python brainworkshop.pyw'
-alias todo='vim ~/Dropbox/notes/todo.txt'
-alias pgist='gist -p -o -c -P -f paste'
 alias awslocal="AWS_ACCESS_KEY_ID=test AWS_SECRET_ACCESS_KEY=test AWS_DEFAULT_REGION=${DEFAULT_REGION:-us-west-2} aws --endpoint-url=http://${LOCALSTACK_HOST:-localhost}:4566"
 alias vi='vim'
